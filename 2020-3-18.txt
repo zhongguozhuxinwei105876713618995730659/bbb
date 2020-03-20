@@ -1,0 +1,169 @@
+目标：
+1.项目安排
+2.项目打包
+3.es6学习
+
+一.项目安排
+1.写日报，提交（休息不用提交）
+每天抽查，两三天所有同学检查一遍
+2.上课布置项目 
+3.技术要求：
+app minit-ui
+pc element-ui
+data 测试阶段：json文件或mock.js  接口：node+mysql
+仿项目：建议看效果用自己的方式去实现
+素材：抠图或使用别的图片代替
+重点：1.复习 2.做看似不会的东西
+
+前端：写前端页面和交互，使用测试数据，后台接口完成之后，把测试数据改成真实数据
+后台：接口
+
+2.上课布置项目： app
+技术要求：
+前端：vue+minitui 
+后端：java+mysql
+
+2-1：安装java环境  运行接口
+2-1-1：下载jdk,安装，最好安装在c盘
+2-1-2：手动配置环境变量
+
+2-2：安装mysql,新建数据库shop，执行shop.sql文件
+打开phpstudy mysql
+
+2-3：启动java接口
+切换进java的接口文件所在的位置 
+cmd中输入 
+java  -jar  shopping-0.0.1-SNAPSHOT.jar
+
+此时就可以使用接口了
+
+1.后端环境（不是必须的） java(jdk)  php(phpstudy) .net(.net环境)
+2.前端环境：node,git/svn,ps,vs...
+vue脚手架，webpack环境
+
+2-4：创建前端项目，使用接口
+1.vue init webpack shop
+2.cd shop
+3.cnpm install
+4.cnpm install axios --save
+5.cnpm install vuex --save
+6.cnpm install minit-ui --save
+7.cnpm install swiper --save
+8.stylus
+app：
+rem.js配置进去
+
+960px/3  320
+
+2.项目打包
+npm run build
+
+注意：把项目由开发环境转成运行环境
+build/index.js 中的build{}
+
+es6:
+			//1.对象的简洁写法
+//			let name = "zhangsan"
+//			let sex = "男"
+//			let obj = {
+//				name:name,
+//				sex:sex
+//			}
+//			let obj = {
+//				name,
+//				sex
+//			}
+			//console.log(obj.name)
+			
+			//2.属性或方法名为变量时的写法  
+//			let a = "name";
+//			let b = "show";
+//			let obj = {
+//				[a]:'zhangsan',
+//				[b](){
+//					console.log(this.name);
+//				}
+//			}
+//			//console.log(obj)
+//			obj.show();
+
+			//3.name属性
+			let obj = {
+				name:"zhangsan",
+				get sex(){
+					return '男'
+				},
+				show(){
+					console.log(this.name)
+				}
+			}
+			console.log(obj.show.name);//show 方法的名称
+			console.log(obj.sex);
+			
+			//4.Object
+			//is 相当于 ===
+			//assign 合并对象
+			console.log(Object.is(10,"10"));//相当于 ===
+			
+			let obj1 = {
+				a:10,
+				b:20
+			}
+			Object.defineProperty(obj1,'c',{
+				enumerable: true,
+				value:30
+			})
+//			let obj2 = {
+//				
+//			}
+//			console.log(obj1);
+//			obj2 = Object.assign({},obj1);
+//			console.log(obj2);
+			
+//			function loop(){
+//				for(let i = 0; i<5; i++){
+//					console.log(i);
+//				}
+//			}
+//			loop();
+			
+			//如何让循环停下来，就像抽奖一样--generator
+			//generator:1.* 2.yield
+			function * loop(){
+				for(let i = 0; i<5; i++){
+					yield console.log(i);//yield 走到这一行停止
+				}
+			}
+			let a = loop();
+			a.next();
+			a.next();
+			a.next();
+			a.next();
+作业：
+1.自己的项目,实现1-2个页面
+2.shop项目首页实现：里面的轮播图调用java接口实现
+3.日报
+4.预习git
+			
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
